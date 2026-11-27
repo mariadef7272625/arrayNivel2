@@ -112,20 +112,17 @@ for (var i = 0; i < nomes.length; i++) {
 }
 
 //20
-var produtos = [
-    { nome: "Notebook", quantidade: 4 },
-    { nome: "Webcam", quantidade: 0 },
-    { nome: "Mousepad", quantidade: 12 },
-    { nome: "Cabo HDMI", quantidade: 0 },
-];
-for (var i = 0; i < produtos.length; i++) {
-    if (produtos[i].quantidade > 0) {
-        console.log(produtos[i].nome + " - " + produtos[i].quantidade);
+const produtos = [
+    "Notebook com 4",
+    "Webcam com 0",
+    "Mousepad com 12",
+    "Cabo HDMI com 0"];
+produtos.forEach(function (produto) { //forEach percorre os elementos do array, um de cada vez. function(produto) cria uma função que recebe cada elemento.
+    let partes = produto.split(" com "); //"Notebook com 4".split(" com ");
+    let nome = partes[0];
+    let quantidade = Number(partes[1]); //Number() Transforma o valor em número, pq "0" é texto 
+    if (quantidade > 0) {
+        console.log(nome, quantidade);
     }
-}
-
-
-
-
-
+});
 
